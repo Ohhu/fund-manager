@@ -64,12 +64,12 @@ jobs:
 
       - name: Inject custom domain (optional)
         if: ${{ vars.PAGES_CNAME != '' }}
-        run: printf '%s\n' "${{ vars.PAGES_CNAME }}" > dist/CNAME
+        run: printf '%s\n' "${{ vars.PAGES_CNAME }}" > dist/fund-manager/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist/fund-manager
 
   deploy:
     needs: build
